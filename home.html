@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteVault - Election Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003d80;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .results-table th {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VoteVault - Proactive Election System</h1>
+    </header>
+    <div class="container">
+        <!-- Voter Registration Form -->
+        <section>
+            <h2>Voter Registration</h2>
+            <form id="registrationForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter a secure password" required>
+                
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- OTP Login -->
+        <section>
+            <h2>Login with OTP</h2>
+            <form id="otpLoginForm">
+                <label for="otpEmail">Email</label>
+                <input type="email" id="otpEmail" placeholder="Enter your registered email" required>
+                
+                <label for="otpCode">OTP</label>
+                <input type="text" id="otpCode" placeholder="Enter the OTP sent to your email" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <!-- Voting -->
+        <section>
+            <h2>Vote for Your Candidate</h2>
+            <form id="votingForm">
+                <label for="candidate">Select Candidate</label>
+                <select id="candidate">
+                    <option value="1">Alice Johnson - Democratic Party</option>
+                    <option value="2">Bob Smith - Republican Party</option>
+                </select>
+                
+                <button type="submit">Submit Vote</button>
+            </form>
+        </section>
+
+        <!-- Real-Time Results -->
+        <section>
+            <h2>Real-Time Election Results</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Party</th>
+                        <th>Total Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                    <!-- Sample data, to be fetched dynamically -->
+                    <tr>
+                        <td>Alice Johnson</td>
+                        <td>Democratic Party</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>Bob Smith</td>
+                        <td>Republican Party</td>
+                        <td>140</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script>
+        // Simulate submission actions for demonstration purposes
+        document.getElementById("registrationForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Voter registered successfully!");
+        });
+
+        document.getElementById("otpLoginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("OTP verified! Login successful.");
+        });
+
+        document.getElementById("votingForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Vote submitted successfully!");
+        });
+    </script>
+</body>
+</html>
